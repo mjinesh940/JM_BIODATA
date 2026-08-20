@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Moments of Joy — Jinesh Jitendra Modi</title>
+  <meta name="description" content="Moments of Joy — a personal photo gallery from the marriage biodata of Jinesh Jitendra Modi." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Manrope:wght@300;400;500;600;700&family=Cinzel:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <!-- ░░ LOADER ░░ -->
+  <div id="loader" aria-hidden="true">
+    <div class="loader-inner">
+      <div class="loader-ring"></div>
+      <div class="loader-monogram">JM</div>
+    </div>
+  </div>
+
+  <!-- ░░ CUSTOM CURSOR ░░ -->
+  <div id="cursor-dot" aria-hidden="true"></div>
+  <div id="cursor-ring" aria-hidden="true"></div>
+
+  <!-- ░░ CANVAS PARTICLES ░░ -->
+  <canvas id="particles-canvas" aria-hidden="true"></canvas>
+
+  <!-- ░░ NAVIGATION ░░ -->
+  <nav id="navbar" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="index.html#hero" class="nav-logo" aria-label="Back to Biodata home">JM</a>
+      <div class="nav-links" role="list">
+        <a href="index.html#about" role="listitem" class="nav-link">About</a>
+        <a href="index.html#sakha" role="listitem" class="nav-link">Sakha</a>
+        <a href="index.html#interests" role="listitem" class="nav-link">Interests</a>
+        <a href="index.html#family" role="listitem" class="nav-link">Family</a>
+        <a href="index.html#contact" role="listitem" class="nav-link">Contact</a>
+      </div>
+      <a href="index.html" class="nav-print-btn" aria-label="Back to Biodata">
+        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+        Biodata
+      </a>
+      <button class="nav-hamburger" id="nav-hamburger" aria-label="Toggle menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+    <div class="nav-mobile-menu" id="nav-mobile-menu">
+      <a href="index.html#about" class="nav-mobile-link">About</a>
+      <a href="index.html#sakha" class="nav-mobile-link">Sakha &amp; Gotra</a>
+      <a href="index.html#interests" class="nav-mobile-link">Interests</a>
+      <a href="index.html#family" class="nav-mobile-link">Family</a>
+      <a href="index.html#contact" class="nav-mobile-link">Contact</a>
+    </div>
+  </nav>
+
+  <!-- ░░ SCROLL PROGRESS ░░ -->
+  <div id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- ═══════════════════════════════════════════════
+       PAGE HERO
+  ═══════════════════════════════════════════════ -->
+  <section id="moments-hero" class="page-hero" aria-labelledby="moments-heading">
+    <a href="index.html" class="back-to-biodata">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+      Back to Biodata
+    </a>
+    <p class="page-hero-eyebrow reveal-up">✦ A Personal Chapter ✦</p>
+    <h1 class="page-hero-title reveal-up" id="moments-heading" style="--delay:0.15s">Moments of Joy</h1>
+    <div class="hero-divider page-hero-divider reveal-up" style="--delay:0.3s" aria-hidden="true"><span></span><span class="div-diamond"></span><span></span></div>
+    <p class="page-hero-sub reveal-up" style="--delay:0.4s">
+      A gentle collection of memories, candid smiles and happy moments —
+      the little chapters that make up the bigger story.
+    </p>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       GALLERY
+  ═══════════════════════════════════════════════ -->
+  <section id="gallery" aria-labelledby="gallery-heading">
+    <div class="section-inner">
+      <div class="section-header">
+        <span class="section-eyebrow">Photo Gallery</span>
+        <h2 class="section-title" id="gallery-heading">Captured <em>Memories</em></h2>
+        <p class="section-subtitle">Click any photo for a closer look</p>
+      </div>
+
+      <div class="gallery-grid" id="gallery-grid" role="list" aria-label="Photo gallery">
+        <!-- Populated by JavaScript from the `moments` array below -->
+      </div>
+      <p class="gallery-empty-note" id="gallery-empty-note" hidden>
+        No photos added yet — see the <code>moments</code> list near the bottom of this
+        page for how to add your first one. ✦
+      </p>
+    </div>
+  </section>
+
+  <!-- ═══════════════════════════════════════════════
+       FOOTER
+  ═══════════════════════════════════════════════ -->
+  <footer id="footer" role="contentinfo">
+    <div class="footer-bg-orbs" aria-hidden="true">
+      <div class="orb orb-f1"></div>
+      <div class="orb orb-f2"></div>
+    </div>
+    <div class="footer-inner">
+      <div class="footer-ornament" aria-hidden="true">✦</div>
+      <h2 class="footer-name">Jinesh Jitendra Modi</h2>
+      <p class="footer-clan">(Chhajed)</p>
+      <div class="footer-divider" aria-hidden="true"><span></span><span class="div-diamond"></span><span></span></div>
+      <p class="footer-profession">Software Engineer · Accenture · Jalna</p>
+      <a href="index.html" class="footer-profession" style="text-decoration:underline; text-underline-offset:3px;">← Back to Full Biodata</a>
+    </div>
+  </footer>
+
+  <!-- Back to top -->
+  <button id="back-to-top" aria-label="Back to top" title="Back to top">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="18 15 12 9 6 15"/></svg>
+  </button>
+
+  <script src="script.js"></script>
+
+  <!-- ═══════════════════════════════════════════════════════════
+       ░░ EDIT ME ░░  ADD NEW MOMENTS HERE
+       This is the ONLY place you need to touch to add photos.
+       Just copy a line and update the src (image path) and title
+       (caption). Photos should live in: assets/moments/
+
+       Example:
+         { src: "assets/moments/moment-04.jpg", title: "A quiet evening" }
+  ═══════════════════════════════════════════════════════════ -->
+  <script>
+    const moments = [
+      // { src: "assets/moments/moment-01.jpg", title: "A beautiful memory" },
+      // { src: "assets/moments/moment-02.jpg", title: "A happy afternoon" },
+      // { src: "assets/moments/moment-03.jpg", title: "Together with family" },
+      // ADD NEW MOMENTS HERE — one line per photo, just like above ↑
+    ];
+
+    if (moments.length) {
+      renderPhotoGallery('#gallery-grid', moments, { featureEvery: 5 });
+    } else {
+      document.getElementById('gallery-empty-note').hidden = false;
+    }
+  </script>
+</body>
+</html>
