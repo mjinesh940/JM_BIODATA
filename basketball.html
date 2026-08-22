@@ -159,11 +159,6 @@
 
   <script src="script.js"></script>
 
-  <!-- ═══════════════════════════════════════════════════════════
-       ░░ EDIT ME ░░  ADD NEW BASKETBALL PHOTOS / VIDEOS HERE
-       Photos live in: assets/basketball/
-       Videos live in: assets/videos/  (poster images in assets/basketball/)
-  ═══════════════════════════════════════════════════════════ -->
   <script>
     const basketballPhotos = [
       // { src: "assets/basketball/basketball-01.jpg", title: "Weekend game" },
@@ -172,16 +167,19 @@
     ];
 
     const basketballVideos = [
-      // { src: "assets/videos/basketball-clip-01.mp4", poster: "assets/basketball/basketball-01.jpg", title: "A quick highlight" },
-      // ADD NEW BASKETBALL VIDEOS HERE — one line per video, just like above ↑
+      { src: "assets/basketball/Videos/b_img_1.mov", title: "[Friends on Court]" },
+      { src: "assets/basketball/Videos/b_img_2.mov", title: "[Basket Finds its Way]" },
+      { src: "assets/basketball/Videos/b_img_3.mov", title: "[Friends in Action]" },
+      { src: "assets/basketball/Videos/b_img_4.mov", title: "[Here Comes The Basket]" },
+      { src: "assets/basketball/Videos/b_img_5.mov", title: "[Here is the Winner]" },
     ];
 
     /* Edit these freely — placeholders only, nothing here is invented. */
     const courtStats = [
       { title: "Basketball",     desc: "Passion",       glow: "gold" },
-      { title: "[Add later]",    desc: "Role",          glow: "rose" },
-      { title: "[Add later]",    desc: "Years Playing", glow: "gold" },
-      { title: "[Add later]",    desc: "Favorite Part", glow: "rose" },
+      { title: "Power Forward",  desc: "Role",          glow: "rose" },
+      { title: "24",             desc: "Years Playing", glow: "gold" },
+      { title: "Team Captain",   desc: "Favorite Part", glow: "rose" },
     ];
 
     if (basketballPhotos.length) {

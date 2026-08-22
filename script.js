@@ -678,9 +678,10 @@ window.addEventListener('afterprint', () => {
 
 /* ═══════════════════════════════════════════════
    22. PAGE TRANSITIONS — subtle fade between chapters
-   Respects prefers-reduced-motion (handled globally
-   in CSS) and never touches browser back/forward,
-   which continue to use normal navigation.
+   Respects prefers-reduced-motion (handled globally in
+   CSS). Browser back/forward still use normal navigation;
+   the pageshow listener below just guards against a stale
+   fade-out class surviving a mobile bfcache restore.
 ═══════════════════════════════════════════════ */
 (function initPageTransitions() {
   document.body.classList.add('page-enter');
@@ -707,6 +708,18 @@ window.addEventListener('afterprint', () => {
       setTimeout(() => { window.location.href = href; }, delay);
     });
   });
+
+  /* Mobile browsers often restore a page from the back-forward cache
+     (bfcache) instead of reloading it when the user taps "back". If a
+     page happened to get cached mid-fade (body.page-leaving, opacity:0
+     — e.g. it was cached right as the timeout above fired navigation),
+     that class comes back with it. With nothing around to remove it,
+     the page stays stuck invisible — a "black screen" — until a manual
+     reload. This runs on every pageshow, including bfcache restores,
+     so the page is always guaranteed visible again. */
+  window.addEventListener('pageshow', () => {
+    document.body.classList.remove('page-leaving', 'page-enter', 'page-enter-active');
+  });
 })();
 
 /* ═══════════════════════════════════════════════
@@ -724,7 +737,7 @@ function renderPhotoGallery(containerSelector, items, opts) {
   items.forEach((item, i) => {
     const fig = document.createElement('figure');
     fig.className = 'gallery-item';
-    if (opts.featureEvery && i % opts.featureEvery === opts.featureEvery - 1) {
+    if (item.featured || (opts.featureEvery && i % opts.featureEvery === opts.featureEvery - 1)) {
       fig.classList.add('gallery-item-featured');
     }
     fig.tabIndex = 0;
