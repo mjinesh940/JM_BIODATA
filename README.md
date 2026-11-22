@@ -1,32 +1,78 @@
-# Royal Jain Heritage Biodata
+# Royal Floral Heritage — React Marriage Biodata
 
-Static, vanilla HTML/CSS/JavaScript website designed for GitHub Pages. No build, dependencies, backend, analytics, or tracking are used. Shared content is rendered from `data.js` by `main.js`; pages choose a renderer through their `data-page` attribute.
+A dependency-managed React/Vite migration of the Jinesh Jitendra Modi marriage biodata website. The application is frontend-only and designed for GitHub Pages using HashRouter.
 
-## Files
+## Technology
 
-- `index.html`, `moments.html`, `basketball.html`, `tech.html`: small page shells and metadata.
-- `biodata.html`: data-driven A4 print view. Its Print / Save as PDF button uses the browser's native print dialog.
-- `data.js`: personal details, family, lineage, contacts, navigation, gallery, videos, technology content, portrait, and section visibility.
-- `main.js`: reusable rendering, menu, gallery lightbox, section reveals, and print view.
-- `style.css`: Royal Floral Heritage theme tokens, shared components, responsive rules, reduced-motion support, and A4 print styles.
-- `assets/moments/`, `assets/basketball/Videos/`, and local floral SVG assets: original media and reusable ornamental elements.
+- React 19
+- Vite
+- React Router HashRouter
+- Framer Motion
+- Lucide React
+- Vanilla CSS
+
+## Install and run
+
+```bash
+npm install
+npm run dev
+```
+
+Local Vite URLs use the `/JM_BIODATA/` base path.
+
+## Production build
+
+```bash
+npm run build
+npm run preview
+```
+
+The generated `dist/` directory is the deployable GitHub Pages artifact.
+
+## Architecture
+
+- `src/pages/` contains Home, Moments, Basketball, Technology, and printable biodata routes.
+- `src/components/layout/` contains shared header and footer layout.
+- `src/components/common/` contains reusable decorative and section components.
+- `src/components/family/` contains the family presentation.
+- `src/components/gallery/` contains the accessible lightbox.
+- `src/components/biodata/` contains the A4 reusable document.
+- `src/data/` contains centralized personal, family, lineage, contact, gallery, video, and technology content.
+- `src/styles/` contains global, responsive, and print styles.
+
+## Routes
+
+- `/` — Home
+- `/moments` — Moments of Joy
+- `/basketball` — Basketball
+- `/technology` — Technology
+- `/biodata` — Printable biodata
+
+HashRouter URLs look like `#/moments` and remain reliable after refresh on GitHub Pages.
 
 ## Updating content
 
-Edit `data.js` for visible content. Change `fullName`, `surname`, `profession`, `location`, or `hero.intro` for personal copy. Update `biodata` with existing information only. Add a family member to the relevant `family[].items` array as `['Relationship','Full name','Optional note']`. Add a photograph to `assets/moments/` and add `['filename.jpg','Caption']` to `moments`. Add a video under `assets/basketball/Videos/` and add its exact case-sensitive filename and caption to `videos`. Update `portrait` to select an existing profile photograph.
+- Personal identity and section visibility: `src/data/siteConfig.js`
+- Personal fields: `src/data/biodata.js`
+- Lineage: `src/data/lineage.js`
+- Family: `src/data/family.js`
+- Gallery: `src/data/gallery.js`
+- Basketball: `src/data/basketball.js`
+- Technology: `src/data/technology.js`
+- Contacts and address: `src/data/contact.js`
 
-Theme colours are CSS custom properties at the top of `style.css` (`--maroon`, `--burgundy`, `--gold`, `--ivory`, `--forest`, `--dusty-rose`, `--charcoal`, `--white`). Replace local SVG ornaments in `assets/` to update the reusable botanical motif system.
+Add new moments to `gallery.js` and place images in `public/assets/moments/`. Add basketball videos to `public/assets/basketball/Videos/` and add their exact case-sensitive filename to `basketball.js`.
 
-Navigation is configured once in `SITE.nav` in `data.js`. Section visibility is centralized in `SITE.sections`: set a key to `false` to hide it or `true` to show it. Keys are `header`, `homeHero`, `biodata`, `heritage`, `family`, `interests`, `contact`, `pageHero`, `gallery`, `videos`, `basketballStats`, `technologyConcepts`, `debugSteps`, `footer`, and `printPortrait`.
+Add family members to the relevant `family[].items` array. Do not add invented relationships or photographs.
 
-## Print / Save as PDF
+## Theme
 
-Open `biodata.html` over HTTP or GitHub Pages, press **Print / Save as PDF**, and choose Save as PDF in the browser print dialog. Enable background graphics for gold and floral accents. The document uses A4 portrait, `210mm × 297mm`, native browser printing, and data from `data.js`; missing fields are omitted rather than invented.
+Palette and typography variables are in `src/styles/global.css`. The reusable Royal Floral motifs are in `public/assets/`.
 
-## Local preview
+## Printing
 
-Serve the folder over HTTP for reliable local preview. The site remains dependency-free and GitHub Pages compatible. Keep relative asset paths and exact case for MOV filenames.
+Open `#/biodata`, select **Print / Save as PDF**, and choose Save as PDF in the browser print dialog. Print rules are in `src/styles/print.css`. Enable background graphics for the decorative borders and portrait treatment.
 
-## Accessibility and motion
+## GitHub Pages
 
-The site uses semantic landmarks, keyboard focus states, accessible lightbox controls and labels, reduced-motion handling, lazy-loaded gallery media, native video controls, responsive navigation, and 44px-plus touch targets.
+Vite is configured with the repository base `/JM_BIODATA/` in `vite.config.js`. The manual GitHub Actions workflow `.github/workflows/deploy-react.yml` builds and can deploy the project. It does not run automatically on push.

@@ -1,0 +1,10 @@
+@page{size:A4 portrait;margin:0}
+@media print{
+  html,body{background:white!important;color:#241c1d!important;-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  .topbar,.footer,.print-actions{display:none!important}
+  .print-sheet{padding:0!important}
+  .biodata-document{width:210mm;min-height:297mm;margin:0;padding:12mm 14mm;border:2px solid #542039;outline:1px solid #D6B56D;outline-offset:-5px;box-shadow:none}
+  .document-profile img{width:38mm;height:47mm;object-position:center 18%!important}
+  .document-section{break-inside:avoid}
+  .document-family,.document-section dl>div{break-inside:avoid}
+}

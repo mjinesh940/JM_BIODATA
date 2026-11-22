@@ -1,1 +1,5 @@
 assets/basketball/Videos/b_img_5.MOV
+node_modules/
+dist/
+.DS_Store
+*.local

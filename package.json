@@ -1,0 +1,35 @@
+{
+  "name": "royal-floral-heritage-biodata",
+  "version": "2.0.0",
+  "description": "Static, vanilla HTML/CSS/JavaScript website designed for GitHub Pages. No build, dependencies, backend, analytics, or tracking are used. Shared content is rendered from `data.js` by `main.js`; pages choose a renderer through their `data-page` attribute.",
+  "main": "main.js",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/mjinesh940/JM_BIODATA.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/mjinesh940/JM_BIODATA/issues"
+  },
+  "homepage": "https://github.com/mjinesh940/JM_BIODATA#readme",
+  "dependencies": {
+    "framer-motion": "^14.14.0",
+    "lucide-react": "^1.77.0",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "react-router-dom": "^7.18.6"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.3.0",
+    "vite": "^8.3.8"
+  }
+}
