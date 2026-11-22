@@ -1,4 +1,4 @@
-name: Deploy React biodata to GitHub Pages
+name: Deploy React site to GitHub Pages
 
 on:
   workflow_dispatch:
@@ -17,15 +17,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout React migration branch
+      - name: Checkout approved React version
         uses: actions/checkout@v4
         with:
-          ref: feature/royal-floral-react-migration
+          ref: 3e4b0c6
 
-      - name: Log checked-out commit
-        run: git rev-parse HEAD
-
-      - name: Set up Node.js
+      - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
           node-version: 22
@@ -37,13 +34,13 @@ jobs:
       - name: Build React application
         run: npm run build
 
-      - name: Verify production entry file
+      - name: Verify build output
         run: test -f dist/index.html
 
       - name: Configure GitHub Pages
         uses: actions/configure-pages@v5
 
-      - name: Upload React dist artifact
+      - name: Upload React build
         uses: actions/upload-pages-artifact@v3
         with:
           path: dist
