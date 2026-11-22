@@ -15,6 +15,8 @@ export default function BiodataDocument({ printButton = false }) {
         </div>
       )}
       <article className="biodata-document">
+        <span className="document-corner document-corner--left" aria-hidden="true" />
+        <span className="document-corner document-corner--right" aria-hidden="true" />
         <header className="document-header">
           <span className="document-mark">✦ &nbsp; JAIN · SHWETAMBAR &nbsp; ✦</span>
           <div className="document-profile">
@@ -23,7 +25,7 @@ export default function BiodataDocument({ printButton = false }) {
               <p className="document-kicker">Marriage Biodata</p>
               <h1>{siteConfig.fullName}</h1>
               <p className="document-surname">({siteConfig.surname})</p>
-              <p>{siteConfig.profession} · {siteConfig.location}</p>
+              <p className="document-profession-location">{siteConfig.profession} · {siteConfig.location}</p>
             </div>
           </div>
         </header>
@@ -55,6 +57,7 @@ export default function BiodataDocument({ printButton = false }) {
           </div>
         </section>
         <footer className="document-footer">With gratitude to our elders for their blessings</footer>
+        <div className="document-floral-band" aria-hidden="true" />
       </article>
     </main>
   )
