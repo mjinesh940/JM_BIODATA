@@ -5,3 +5,31 @@
 .heritage-section .section-heading h2{font-size:clamp(32px,4vw,48px)}
 .heritage-section .section-heading__eyebrow{font-size:.62rem}
 .heritage-section .floral-divider{transform:scale(.8);margin-top:12px}
+
+@media(max-width:760px){
+  html{scroll-padding-top:64px}
+  .topbar{padding-left:env(safe-area-inset-left);padding-right:env(safe-area-inset-right)}
+  .menu-button{justify-content:center;padding:8px 10px}
+  .main-nav a{display:flex;align-items:center}
+  .footer{padding-bottom:calc(48px + env(safe-area-inset-bottom))}
+}
+
+@media(max-width:480px){
+  .section{padding:56px 0}
+  .section-heading{margin-bottom:32px}
+  .section-heading h2{font-size:clamp(34px,10.5vw,42px);line-height:1}
+  .hero-copy h1{font-size:clamp(35px,11vw,43px)}
+  .hero-profession{font-size:.72rem;line-height:1.5}
+  .page-hero h1{font-size:clamp(36px,11vw,46px)}
+  .lightbox figure{width:100%;max-width:100%;min-width:0}
+  .lightbox figcaption{font-size:.9rem}
+}
+
+@media(max-width:360px){
+  .nav-shell{width:calc(100% - 20px)}
+  .brand{font-size:1.75rem}
+  .hero-copy h1{font-size:clamp(32px,10.5vw,38px)}
+  .hero-surname{font-size:18px;letter-spacing:.12em}
+  .portrait-frame>span{font-size:.65rem}
+  .page-hero{padding-right:14px;padding-left:14px}
+}

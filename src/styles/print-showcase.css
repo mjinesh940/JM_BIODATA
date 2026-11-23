@@ -178,3 +178,137 @@
     font-size: 9pt;
   }
 }
+
+@media screen and (max-width: 760px) {
+  .print-sheet {
+    min-height: 100vh;
+    min-height: 100dvh;
+    padding: 12px 0 calc(16px + env(safe-area-inset-bottom));
+  }
+
+  .print-actions {
+    position: sticky;
+    top: max(8px, env(safe-area-inset-top));
+    z-index: 20;
+    flex-wrap: wrap;
+    width: min(480px, calc(100% - 24px));
+    margin: 0 auto 12px;
+    gap: 8px;
+  }
+
+  .print-button {
+    flex: 1 1 155px;
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 12px;
+    text-align: center;
+  }
+
+  .biodata-document {
+    width: calc(100% - 24px);
+    height: auto;
+    min-height: 0;
+    aspect-ratio: auto;
+    margin: 0 auto 16px;
+    border: 1px solid rgba(226, 189, 89, .8);
+    background: linear-gradient(155deg, #642039, #430d20 62%, #321224);
+    box-shadow: 0 12px 32px rgba(20, 5, 12, .28);
+  }
+
+  .document-frame-background {
+    display: none;
+  }
+
+  .document-content {
+    position: relative;
+    inset: auto;
+    padding: clamp(16px, 5vw, 24px);
+    font-size: 14px;
+    line-height: 1.45;
+  }
+
+  .document-mark {
+    font-size: 11px;
+    line-height: 1.4;
+  }
+
+  .document-profile {
+    display: grid;
+    grid-template-columns: minmax(68px, 28%) minmax(0, 1fr);
+    align-items: center;
+    gap: 12px;
+    margin-top: 14px;
+  }
+
+  .document-profile img {
+    width: 100%;
+    max-width: 110px;
+    height: auto;
+    aspect-ratio: 3 / 4;
+  }
+
+  .document-profile h1 {
+    font-size: clamp(20px, 6vw, 30px) !important;
+    line-height: 1.05;
+    white-space: normal;
+    overflow-wrap: anywhere;
+  }
+
+  .document-profile p {
+    font-size: 13px !important;
+    line-height: 1.4;
+  }
+
+  .document-surname {
+    font-size: 16px;
+  }
+
+  .document-section {
+    margin-top: 18px;
+  }
+
+  .document-section h2 {
+    margin-bottom: 8px;
+    font-size: 20px;
+    line-height: 1.2;
+  }
+
+  .document-section dl {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0;
+  }
+
+  .document-section dl > div {
+    display: grid;
+    grid-template-columns: minmax(90px, 34%) minmax(0, 1fr);
+    gap: 8px;
+    padding: 7px 0;
+  }
+
+  .document-section dt {
+    flex: none;
+    width: auto;
+  }
+
+  .document-family-grid,
+  .document-contacts {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 4px;
+  }
+
+  .document-family {
+    margin: 8px 0;
+  }
+
+  .document-family h3 {
+    font-size: 17px;
+  }
+
+  .document-family p,
+  .document-contacts p {
+    margin: 5px 0;
+    line-height: 1.4;
+  }
+}
