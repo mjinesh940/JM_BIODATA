@@ -45,7 +45,7 @@ export default function Home() {
 
       {siteConfig.sections.heritage && <section id="heritage" className="section heritage-section">
         <div className="heritage-mandala" aria-hidden="true" />
-        <div className="section-shell"><SectionHeading eyebrow="Roots & lineage" title="Sacred Lineage" light />
+        <div className="section-shell"><SectionHeading eyebrow="Roots & lineage" title="SAKHA" light />
           <div className="lineage-timeline">{lineage.map(([label, value, note], index) => (
             <motion.article key={label} initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true }} transition={{ delay: index * 0.09 }}><span>0{index + 1}</span><div><small>{label}</small><h3>{value}</h3>{note && <p>{note}</p>}</div></motion.article>
           ))}</div>
