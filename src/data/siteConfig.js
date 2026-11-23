@@ -4,7 +4,7 @@ export const siteConfig = {
   fullName: 'Er. Jinesh Jitendra Modi',
   surname: 'Chhajed',
   profession: 'Software Engineer at Accenture',
-  location: 'Jalna, Maharashtra',
+  location: 'Mumbai, Maharashtra',
   portrait: 'cover_pic.jpg',
   hero: {
     kicker: 'A blessed Jain family introduction',

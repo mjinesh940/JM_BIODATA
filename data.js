@@ -2,7 +2,7 @@
 window.SITE={
  title:'Jinesh Jitendra Modi — Marriage Biodata',brand:'JM',portrait:'cover_pic.jpg',
  sections:{header:true,homeHero:true,biodata:true,heritage:true,family:true,interests:true,contact:true,pageHero:true,gallery:true,videos:true,basketballStats:false,technologyConcepts:true,debugSteps:true,footer:true,printPortrait:true},
- profession:'Software Engineer at Accenture',location:'Jalna, Maharashtra',
+ profession:'Software Engineer at Accenture',location:'Mumbai, Maharashtra',
  fullName:'Er. Jinesh Jitendra Modi',surname:'Chhajed',
  hero:{kicker:'A blessed Jain family introduction',intro:'Rooted in Jain values, family warmth and a lifelong curiosity to learn, create and grow.'},
  nav:[['Home','index.html'],['Biodata','#biodata'],['Heritage','#heritage'],['Family','#family'],['Moments','moments.html'],['Basketball','basketball.html'],['Technology','tech.html'],['Contact','#contact']],
