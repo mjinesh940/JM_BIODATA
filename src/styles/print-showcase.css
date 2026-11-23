@@ -1,0 +1,180 @@
+.print-sheet {
+  min-height: 100vh;
+  background:
+    radial-gradient(circle at 50% 0, rgba(214, 181, 109, .18), transparent 36%),
+    linear-gradient(135deg, var(--burgundy), var(--plum) 65%, #43152a);
+}
+
+.biodata-document {
+  position: relative;
+  width: min(210mm, calc(100% - 24px));
+  height: auto;
+  min-height: 297mm;
+  aspect-ratio: 210 / 297;
+  margin: 0 auto 24px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  outline: 0;
+  background: none;
+  box-shadow: none;
+  color: #f5dc93;
+}
+
+.document-frame-background {
+  position: absolute;
+  inset: 0 -4%;
+  width: 108%;
+  height: 100%;
+  max-width: none;
+  object-fit: fill;
+}
+
+.document-content {
+  position: absolute;
+  inset: 13.5% 14.5% 15.3%;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5mm 3mm;
+  color: #f5dc93;
+  font-size: clamp(8px, .8vw, 9pt);
+  line-height: 1.15;
+}
+
+.document-header {
+  min-width: 0;
+  padding-bottom: 1.5mm;
+  border-bottom: 1px solid #d6b56d;
+}
+
+.document-mark {
+  color: #f6d881;
+  font-size: 1.08em;
+  line-height: 1.1;
+}
+
+.document-profile {
+  gap: 3.5mm;
+  margin-top: 3.5mm;
+}
+
+.document-profile img {
+  width: 27mm;
+  height: 36mm;
+  border: 1px solid #e6c46c;
+  padding: 1px;
+}
+
+.document-profile h1 {
+  margin: 1mm 0;
+  color: #ffe8a3;
+  font-size: 1.75em !important;
+  line-height: 1;
+  white-space: normal;
+}
+
+.document-profile p {
+  margin: .8mm 0;
+  color: #f5dc93;
+  font-size: 1em !important;
+}
+
+.document-kicker {
+  color: #e9bd64 !important;
+}
+
+.document-surname {
+  color: #f5dc93 !important;
+  font-size: 1.05em;
+}
+
+.document-section {
+  margin-top: 2.5mm;
+  min-width: 0;
+  width: 100%;
+}
+
+.document-section h2 {
+  width: 100%;
+  margin: 0 0 1mm;
+  padding-bottom: .5mm;
+  border-bottom: 1px solid rgba(226, 189, 89, .8);
+  color: #ffe09a;
+  font-size: 1.35em;
+  line-height: 1.1;
+}
+
+.document-section dl {
+  gap: .3mm 2mm;
+  min-width: 0;
+  width: 100%;
+}
+
+.document-section dl > div {
+  gap: 1mm;
+  padding: .4mm 0;
+  border-color: rgba(226, 189, 89, .35);
+  min-width: 0;
+}
+
+.document-section dt {
+  flex: 0 0 36%;
+  width: auto;
+}
+
+.document-section dd {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+.document-section dt,
+.document-section dd,
+.document-family p,
+.document-contacts p {
+  color: #f5dc93;
+  font-size: 1em !important;
+  line-height: 1.15;
+}
+
+.document-family-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1mm 3mm;
+  min-width: 0;
+}
+
+.document-family {
+  margin: .8mm 0;
+  min-width: 0;
+}
+
+.document-family h3 {
+  margin: .5mm 0;
+  color: #e9bd64;
+  font-size: 1.05em;
+  line-height: 1.1;
+}
+
+.document-family p,
+.document-contacts p {
+  margin: .5mm 0;
+  overflow-wrap: anywhere;
+}
+
+.document-contacts {
+  gap: 0 2mm;
+  min-width: 0;
+}
+
+@media print {
+  .biodata-document {
+    width: 210mm;
+    height: 297mm;
+    min-height: 297mm;
+    margin: 0;
+  }
+
+  .document-content {
+    font-size: 9pt;
+  }
+}

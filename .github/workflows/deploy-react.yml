@@ -17,10 +17,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout approved React version
+      - name: Checkout React source
         uses: actions/checkout@v4
-        with:
-          ref: 3e4b0c6a1583e39ca42be54d2a0fdf84ac194778
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
